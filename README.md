@@ -1,8 +1,10 @@
-Copy code
-
 # My NBA Games Portfolio App
 
-Welcome to **My NBA Games**, a Next.js application that allows you to explore NBA games, players, and teams. This portfolio app provides a sleek and intuitive interface for NBA enthusiasts to stay updated with the latest information.
+Welcome to **My NBA Games**, a Next.js v14 application that allows you to explore NBA games, players, and teams. This portfolio app leverages the exciting features introduced in Next.js v14 to provide a modern and seamless experience for NBA enthusiasts to stay updated with the latest information.
+
+## Next.js 14 Features
+
+This project is built using Next.js version 14, taking advantage of the latest features and enhancements. Explore the power of Next.js with improved performance, developer experience, and new capabilities. For detailed information, refer to the [Next.js 14 Release Notes](https://nextjs.org/blog/next-14).
 
 ## Prerequisites
 
