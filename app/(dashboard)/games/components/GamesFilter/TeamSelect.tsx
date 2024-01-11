@@ -38,10 +38,7 @@ export const TeamSelect = ({ teamsOptions }: TeamSelectProps) => {
       );
       currentUrl.searchParams.delete('page');
     }
-    // window.history.replaceState({}, '', currentUrl.toString());
-    // console.log({ currentUrl:`` });
     push(`${currentUrl.pathname}${currentUrl.search}`);
-    // replace(`${currentUrl.pathname}${currentUrl.search}`);
   };
 
   const defaultValuesIds = searchParams.get('selectedTeams')?.split('-');

@@ -1,6 +1,5 @@
 import { Game } from '@/app/types/games';
 import Image from 'next/image';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 export const GameCard = ({
   date,
