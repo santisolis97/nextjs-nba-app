@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Copy code
+
+# My NBA Games Portfolio App
+
+Welcome to **My NBA Games**, a Next.js application that allows you to explore NBA games, players, and teams. This portfolio app provides a sleek and intuitive interface for NBA enthusiasts to stay updated with the latest information.
+
+## Prerequisites
+
+Before you start, make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository to your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/santisolis97/nextjs-nba-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change into the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd nextjs-nba-app
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Install dependencies:
 
-## Learn More
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Create a file named .env.local and fill the blanks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+API_KEY='***********'
+API_HOST='***********'
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Run the development server:
 
-## Deploy on Vercel
+6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `npm run dev`: Runs the app in development mode.
+- `npm run build`: Builds the app for production.
+- `npm start`: Starts the production-ready app.
+- `npm run lint`: Lints the project files.
+
+## Dependencies
+
+- **@heroicons/react**: SVG icons for UI components.
+- **axios**: HTTP client for making API requests.
+- **clsx**: Utility for conditionally joining class names together.
+- **next**: React framework for server-rendered applications.
+- **react**: JavaScript library for building user interfaces.
+- **react-dom**: Entry point for working with the DOM.
+- **react-icons**: Icon library for React.
+- **react-loading-skeleton**: Placeholder loading animations for components.
+- **react-select**: Dropdown component with advanced features.
+
+## Dev Dependencies
+
+- **@types/node**, **@types/react**, **@types/react-dom**: TypeScript type definitions.
+- **autoprefixer**: PostCSS plugin to parse CSS and add vendor prefixes.
+- **eslint**, **eslint-config-next**: Linting tools for maintaining code quality.
+- **postcss**: CSS preprocessor.
+- **tailwindcss**: Utility-first CSS framework.
+- **typescript**: Typed superset of JavaScript.
+
+## Environment Variables
+
+Ensure you have the following environment variables set in your `.env` file:
+
+- API used in this project: [https://rapidapi.com/theapiguy/api/free-nba](https://rapidapi.com/theapiguy/api/free-nba)
+- `API_KEY`: Your API key for accessing NBA data.
+- `API_HOST`: The host for the NBA API (default: 'free-nba.p.rapidapi.com').
+
+Feel free to explore, customize, and enhance the app to suit your needs! If you encounter any issues or have suggestions, please let us know by [raising an issue](https://github.com/your-username/my-nba-games/issues). Happy coding!
