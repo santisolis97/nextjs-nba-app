@@ -1,7 +1,7 @@
-import { Game } from '@/app/types/games';
-import { GameCard } from '../GameCard/GameCard';
-import Pagination from '../../../../components/Pagination/Pagination';
-import { getGames } from '@/app/api/requests';
+import { Game } from "@/app/types/games";
+import { GameCard } from "../GameCard/GameCard";
+import Pagination from "../../../../../components/ui/Pagination/Pagination";
+import { getGames } from "@/app/api/requests";
 
 export const GameGrid = async ({
   searchParams,
@@ -9,11 +9,11 @@ export const GameGrid = async ({
   searchParams?: { page: string; selectedTeams: string };
 }) => {
   const { page, selectedTeams } = searchParams || {
-    page: '0',
-    selectedTeams: '',
+    page: "0",
+    selectedTeams: "",
   };
   const selectedTeamsArray = selectedTeams
-    ?.split('-')
+    ?.split("-")
     .filter(Boolean)
     .map(Number);
 
@@ -21,7 +21,7 @@ export const GameGrid = async ({
 
   return (
     <div>
-      <div className='flex flex-wrap gap-6 justify-center items-center pb-4'>
+      <div className="flex flex-wrap items-center justify-center gap-6 pb-4">
         {games.data.data.map((game: Game) => (
           <GameCard key={game.id} {...game} />
         ))}

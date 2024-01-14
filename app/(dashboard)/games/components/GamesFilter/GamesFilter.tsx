@@ -1,7 +1,7 @@
-import React from 'react';
-import { OptionType } from '../../../../components/MultiSelect/MultiSelect';
-import { getTeams } from '@/app/api/requests';
-import { TeamSelect } from './TeamSelect';
+import React from "react";
+import { OptionType } from "../../../../../components/ui/MultiSelect/MultiSelect";
+import { getTeams } from "@/app/api/requests";
+import { TeamSelect } from "./TeamSelect";
 
 export const GamesFilter = async () => {
   const teams = await getTeams();
@@ -11,9 +11,9 @@ export const GamesFilter = async () => {
   }));
 
   return (
-    <div className='flex w-1/2 items-center justify-end gap-3'>
+    <div className="flex w-1/2 items-center justify-end gap-3">
       <div>Filter by team:</div>
-      <div className='w-3/4'>
+      <div className="w-3/4">
         <TeamSelect teamsOptions={teamsOptions} />
       </div>
     </div>

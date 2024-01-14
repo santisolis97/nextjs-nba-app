@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Link } from "./components/Link/Link";
+import { Link } from "../components/ui/Link/Link";
 import { FaArrowRight } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -19,22 +20,21 @@ export default function Home() {
             }}
             width="1920"
           />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-white bg-opacity-70 dark:bg-black/70" />
           <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
               Experience the Thrill of NBA
             </h1>
-            <p className="mt-4 pb-8 text-lg text-gray-300 md:text-xl">
+            <p className="mt-4 pb-8 text-lg md:text-xl">
               Join the ultimate NBA fan community and get access to exclusive
               content, stats, and more.
             </p>
-            <Link
-              className="bg-gray-50 p-4 dark:hover:bg-gray-300"
-              href="/games"
-            >
-              <div className="flex items-center gap-2">
-                Go to Dashboard <FaArrowRight />{" "}
-              </div>
+            <Link className="p-0" href="/games">
+              <Button>
+                <div className="flex items-center gap-2">
+                  Go to Dashboard <FaArrowRight />{" "}
+                </div>
+              </Button>
             </Link>
           </div>
         </section>

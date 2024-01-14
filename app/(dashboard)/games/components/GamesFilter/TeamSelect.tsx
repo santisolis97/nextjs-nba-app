@@ -1,11 +1,10 @@
-'use client';
-import {
-  MultiSelect,
-  OptionType,
-} from '@/app/components/MultiSelect/MultiSelect';
-import { useRouter, useSearchParams } from 'next/navigation';
-import React from 'react';
-import { Options } from 'react-select';
+"use client";
+
+import { MultiSelect } from "@/components/ui/MultiSelect/MultiSelect";
+import { OptionType } from "@/components/ui/MultiSelect/MultiSelect";
+import { useRouter, useSearchParams } from "next/navigation";
+import React from "react";
+import { Options } from "react-select";
 
 export type TeamSelectProps = {
   teamsOptions: Options<OptionType>;
@@ -17,7 +16,7 @@ export const TeamSelect = ({ teamsOptions }: TeamSelectProps) => {
 
   const filterArrayBySelectedIds = (
     teams: Options<OptionType>,
-    selectedTeamsIds: string[]
+    selectedTeamsIds: string[],
   ) => {
     return teams.filter((item) => selectedTeamsIds.includes(item.value));
   };
@@ -28,20 +27,20 @@ export const TeamSelect = ({ teamsOptions }: TeamSelectProps) => {
     const currentUrl = new URL(window.location.href);
 
     // Remove existing selectedTeams parameter
-    currentUrl.searchParams.delete('selectedTeams');
+    currentUrl.searchParams.delete("selectedTeams");
 
     // Add the new selectedTeams parameter
     if (newValue.length > 0) {
       currentUrl.searchParams.set(
-        'selectedTeams',
-        selectedTeamValues.join('-')
+        "selectedTeams",
+        selectedTeamValues.join("-"),
       );
-      currentUrl.searchParams.delete('page');
+      currentUrl.searchParams.delete("page");
     }
     push(`${currentUrl.pathname}${currentUrl.search}`);
   };
 
-  const defaultValuesIds = searchParams.get('selectedTeams')?.split('-');
+  const defaultValuesIds = searchParams.get("selectedTeams")?.split("-");
   const defaultValues = defaultValuesIds
     ? filterArrayBySelectedIds(teamsOptions, defaultValuesIds)
     : [];

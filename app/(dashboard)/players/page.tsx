@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
-import { PlayerGrid } from './components/PlayerGrid/PlayerGrid';
-import { PlayerGridSkeleton } from './components/PlayerGrid/PlayerGridSkeleton';
-import { Search } from '@/app/components/Search/Search';
+import { Suspense } from "react";
+import { PlayerGrid } from "./components/PlayerGrid/PlayerGrid";
+import { PlayerGridSkeleton } from "./components/PlayerGrid/PlayerGridSkeleton";
+import { Search } from "@/components/ui/Search/Search";
 
 const Page = async ({
   searchParams,
@@ -10,11 +10,11 @@ const Page = async ({
 }) => {
   return (
     <div>
-      <div className='pb-4 flex justify-end'>
-        <Search placeholder='Insert player name' />
+      <div className="flex justify-end pb-4">
+        <Search placeholder="Insert player name" />
       </div>
       <Suspense
-        key={searchParams?.query ?? '' + searchParams?.page ?? ''}
+        key={searchParams?.query ?? "" + searchParams?.page ?? ""}
         fallback={<PlayerGridSkeleton />}
       >
         <PlayerGrid searchParams={searchParams} />

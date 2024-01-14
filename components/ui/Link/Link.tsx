@@ -1,7 +1,7 @@
-'use client';
-import React, { PropsWithChildren } from 'react';
-import NextLink, { LinkProps } from 'next/link';
-import { usePathname } from 'next/navigation';
+"use client";
+import React, { PropsWithChildren } from "react";
+import NextLink, { LinkProps } from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Link = ({
   href,
@@ -14,21 +14,21 @@ export const Link = ({
 
   return (
     <NextLink
-      href={href || '#'} // Make sure to provide a valid href or default to '#'
+      href={href || "#"} // Make sure to provide a valid href or default to '#'
       className={`
         ${className} 
+        rounded-md 
         p-2 
         text-gray-600 
-        focus:outline-none 
         transition-colors 
         duration-300 
-        rounded-md 
+        focus:outline-none 
         dark:text-gray-400 
-        hover:bg-gray-100
+        
         ${
           isCurrentPath
-            ? 'bg-blue-100 shadow-md !text-gray-800'
-            : 'dark:hover:bg-gray-800'
+            ? "bg-blue-100 !text-gray-800 shadow-md"
+            : "dark:hover:bg-gray-800"
         }
       `}
       {...rest}

@@ -1,6 +1,9 @@
 "use client";
 import { Game } from "@/app/types/games";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
+import { useState } from "react";
+import { IoHeartOutline, IoHeartSharp } from "react-icons/io5";
 import "react-loading-skeleton/dist/skeleton.css";
 export const GameCard = ({
   date,
@@ -12,6 +15,7 @@ export const GameCard = ({
   visitor_team_score,
 }: Game) => {
   const isHomeTeamWinner = home_team_score > visitor_team_score;
+  const [isLiked, setIsLiked] = useState(false);
 
   const originalDate = new Date(date);
   const formattedDate = `${originalDate.getFullYear()}-${(
@@ -19,30 +23,16 @@ export const GameCard = ({
   )
     .toString()
     .padStart(2, "0")}-${originalDate.getDate().toString().padStart(2, "0")}`;
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    console.log(event.detail);
-    switch (event.detail) {
-      case 1: {
-        console.log("single click");
-        break;
-      }
-      case 2: {
-        console.log("double click");
-        break;
-      }
-      case 3: {
-        console.log("triple click");
-        break;
-      }
-      default: {
-        break;
-      }
+    if (event.detail === 2) {
+      setIsLiked((prev) => !prev);
     }
   };
   return (
-    <button
+    <Card
       onClick={handleClick}
-      className=" flex h-96 max-w-sm flex-col items-center justify-between overflow-hidden rounded-3xl bg-white p-6 shadow-lg  transition-transform hover:scale-105 sm:w-1/2 md:w-1/3 lg:w-1/4 dark:bg-gray-800 "
+      className="relative flex h-96 max-w-sm cursor-pointer select-none flex-col  justify-between overflow-hidden rounded-3xl  p-6 shadow-lg  transition-transform hover:scale-105 sm:w-1/2 md:w-1/3 lg:w-1/4"
     >
       <div className="mb-4 flex justify-between">
         <div className={`max-w-[90%] text-lg font-semibold`}>
@@ -95,6 +85,13 @@ export const GameCard = ({
           className="h-[54px] w-[96px]"
         />
       </div>
-    </button>
+      <div className="absolute bottom-4 right-4">
+        {isLiked ? (
+          <IoHeartSharp size={24} color="red" />
+        ) : (
+          <IoHeartOutline size={24} />
+        )}
+      </div>
+    </Card>
   );
 };

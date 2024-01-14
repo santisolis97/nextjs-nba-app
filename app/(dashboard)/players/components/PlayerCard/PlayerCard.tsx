@@ -1,6 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import { Team } from '@/app/types/teams';
+import React from "react";
+import Image from "next/image";
+import { Team } from "@/app/types/teams";
+import { Card } from "@/components/ui/card";
 
 type PlayerCardProps = {
   id: number;
@@ -24,47 +25,47 @@ export const PlayerCard = ({
   weight_pounds,
 }: PlayerCardProps) => {
   return (
-    <div className='hover:scale-105 transition-transform justify-between max-w-sm rounded-3xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 p-6 h-96 sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col '>
-      <div className='flex justify-between mb-4'>
-        <div className='text-2xl font-semibold max-w-[90%]'>
-          <span className='text-green-400'>
+    <Card className="flex h-96 w-[100%] max-w-sm flex-col justify-between overflow-hidden rounded-3xl p-6 shadow-lg transition-transform hover:scale-105 sm:w-1/2 md:w-1/3 lg:w-1/4 ">
+      <div className="mb-4 flex justify-between">
+        <div className="max-w-[90%] text-2xl font-semibold">
+          <span className="text-green-400">
             {first_name} {last_name}
           </span>
         </div>
-        <div className='text-gray-500'>{position}</div>
+        <div className="text-gray-500">{position}</div>
       </div>
 
-      <div className='mb-4'>
-        <div className='text-sm text-gray-500'>Team</div>
-        <div className='text-lg'>{team.full_name}</div>
+      <div className="mb-4">
+        <div className="text-sm text-gray-500">Team</div>
+        <div className="text-lg">{team.full_name}</div>
       </div>
 
-      <div className='mb-4'>
-        <div className='text-sm text-gray-500'>Height</div>
-        <div className='text-lg'>
+      <div className="mb-4">
+        <div className="text-sm text-gray-500">Height</div>
+        <div className="text-lg">
           {height_feet && height_inches
             ? `${height_feet}' ${height_inches}"`
-            : 'N/A'}
+            : "N/A"}
         </div>
       </div>
 
-      <div className='mb-4'>
-        <div className='text-sm text-gray-500'>Weight</div>
-        <div className='text-lg'>
-          {weight_pounds ? `${weight_pounds} lbs` : 'N/A'}
+      <div className="mb-4">
+        <div className="text-sm text-gray-500">Weight</div>
+        <div className="text-lg">
+          {weight_pounds ? `${weight_pounds} lbs` : "N/A"}
         </div>
       </div>
 
-      <div className='flex justify-center '>
+      <div className="flex justify-center ">
         <Image
-          src='/nba-logo.webp'
-          alt='NBA Logo'
-          width='0'
-          height='0'
-          sizes='100vw'
-          className='w-[96px] h-[54px]'
+          src="/nba-logo.webp"
+          alt="NBA Logo"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="h-[54px] w-[96px]"
         />
       </div>
-    </div>
+    </Card>
   );
 };
