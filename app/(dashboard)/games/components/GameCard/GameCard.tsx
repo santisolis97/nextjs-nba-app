@@ -1,5 +1,5 @@
 "use client";
-import { Game } from "@/app/types/games";
+import { Game } from "@/types/games";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { useState } from "react";

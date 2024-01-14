@@ -1,7 +1,7 @@
-import { Game } from "@/app/types/games";
+import { Game } from "@/types/games";
 import { GameCard } from "../GameCard/GameCard";
 import Pagination from "../../../../../components/ui/Pagination/Pagination";
-import { getGames } from "@/app/api/requests";
+import { getGames } from "@/api/requests";
 
 export const GameGrid = async ({
   searchParams,

@@ -1,7 +1,7 @@
 import Pagination from "../../../../../components/ui/Pagination/Pagination";
-import { getPlayers } from "@/app/api/requests";
+import { getPlayers } from "@/api/requests";
 import { PlayerCard } from "../PlayerCard/PlayerCard";
-import { Player } from "@/app/types/players";
+import { Player } from "@/types/players";
 
 export const PlayerGrid = async ({
   searchParams,

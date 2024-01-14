@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Team } from "@/app/types/teams";
+import { Team } from "@/types/teams";
 import { Card } from "@/components/ui/card";
 
 type PlayerCardProps = {

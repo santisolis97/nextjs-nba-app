@@ -1,6 +1,6 @@
 import React from "react";
 import { OptionType } from "../../../../../components/ui/MultiSelect/MultiSelect";
-import { getTeams } from "@/app/api/requests";
+import { getTeams } from "@/api/requests";
 import { TeamSelect } from "./TeamSelect";
 
 export const GamesFilter = async () => {
