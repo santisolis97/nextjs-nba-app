@@ -21,7 +21,7 @@ export default function Page() {
         </Button>
         <div className="flex items-center justify-between">
           <span className="w-1/5 border-b lg:w-1/4" />
-          <span className="text-center text-xs uppercase text-gray-500">
+          <span className="text-center text-xs uppercase ">
             or sign in with email
           </span>
           <span className="w-1/5 border-b lg:w-1/4" />
@@ -51,6 +51,15 @@ export default function Page() {
           >
             Forgot password?
           </Link>
+          <div>
+            Don't have account?{" "}
+            <Link
+              className="text-sm text-gray-600 underline dark:text-gray-400"
+              href="/signup"
+            >
+              Sign Up
+            </Link>
+          </div>
         </div>
       </Card>
     </div>

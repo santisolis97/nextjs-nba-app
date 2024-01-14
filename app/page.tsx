@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Link } from "../components/ui/Link/Link";
 import { FaArrowRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,13 +29,18 @@ export default function Home() {
               Join the ultimate NBA fan community and get access to exclusive
               content, stats, and more.
             </p>
-            <Link className="p-0" href="/games">
-              <Button>
-                <div className="flex items-center gap-2">
-                  Go to Dashboard <FaArrowRight />{" "}
-                </div>
-              </Button>
-            </Link>
+            <div className="flex w-[100%] flex-col gap-2 md:w-[20%]">
+              <Link className="w-full p-0" href="/login">
+                <Button className="w-full">
+                  <div className="flex items-center gap-2">Log In</div>
+                </Button>
+              </Link>
+              <Link className="w-full p-0" href="/signup">
+                <Button className="w-full">
+                  <div className="flex items-center gap-2">Sign Up</div>
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
